@@ -1,0 +1,121 @@
+<svg width="100%" viewBox="0 0 680 520" xmlns="http://www.w3.org/2000/svg">
+<style>
+  svg { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  .th { font-size: 14px; font-weight: 500; fill: #2C2C2A; }
+  .ts { font-size: 12px; font-weight: 400; fill: #5F5E5A; }
+  .board-body { fill: #F1EFE8; stroke: #888780; stroke-width: 1.5; }
+  .pin { fill: #F1EFE8; stroke: #B4B2A9; stroke-width: 0.5; }
+  .usb { fill: #D3D1C7; stroke: #888780; stroke-width: 1; }
+  .teal-box { fill: #E1F5EE; stroke: #0F6E56; stroke-width: 0.5; }
+  .teal-title { font-size: 14px; font-weight: 500; fill: #085041; }
+  .teal-shape { fill: none; stroke: #0F6E56; stroke-width: 1.5; opacity: 0.6; }
+  .coral-box { fill: #FAECE7; stroke: #993C1D; stroke-width: 0.5; }
+  .coral-title { font-size: 14px; font-weight: 500; fill: #712B13; }
+  .amber-box { fill: #FAEEDA; stroke: #854F0B; stroke-width: 0.5; }
+  .amber-title { font-size: 14px; font-weight: 500; fill: #633806; }
+  .amber-sub { font-size: 12px; font-weight: 400; fill: #854F0B; }
+  .resistor { fill: #F1EFE8; stroke: #888780; stroke-width: 0.8; }
+</style>
+
+<!-- Pro Micro board body -->
+<rect class="board-body" x="220" y="140" width="240" height="280" rx="8"/>
+<text class="th" x="340" y="170" text-anchor="middle">Pro Micro</text>
+<text class="ts" x="340" y="190" text-anchor="middle">ATmega32U4</text>
+
+<!-- USB connector -->
+<rect class="usb" x="300" y="126" width="80" height="24" rx="4"/>
+<text class="ts" x="340" y="142" text-anchor="middle">USB</text>
+
+<!-- Left side pins -->
+<rect class="pin" x="220" y="220" width="36" height="18" rx="3"/>
+<text class="ts" x="238" y="233" text-anchor="middle">GND</text>
+<rect class="pin" x="220" y="250" width="36" height="18" rx="3"/>
+<text class="ts" x="238" y="263" text-anchor="middle">GND</text>
+<rect class="pin" x="220" y="290" width="36" height="18" rx="3"/>
+<text class="ts" x="238" y="303" text-anchor="middle">VCC</text>
+
+<!-- Right side pins -->
+<rect class="pin" x="424" y="220" width="36" height="18" rx="3"/>
+<text class="ts" x="442" y="233" text-anchor="middle">Pin 2</text>
+<rect class="pin" x="424" y="260" width="36" height="18" rx="3"/>
+<text class="ts" x="442" y="273" text-anchor="middle">Pin 3</text>
+<rect class="pin" x="424" y="340" width="36" height="18" rx="3"/>
+<text class="ts" x="442" y="353" text-anchor="middle">A0</text>
+
+<!-- ===== ARCADE BUTTON ===== -->
+<rect class="teal-box" x="540" y="160" width="120" height="80" rx="10"/>
+<circle class="teal-shape" cx="600" cy="192" r="18"/>
+<text class="teal-title" x="600" y="228" text-anchor="middle">Arcade-knap</text>
+
+<!-- Button wire to Pin 2 -->
+<path d="M540 190 L475 190 L475 229 L460 229" fill="none" stroke="#1D9E75" stroke-width="2" stroke-linecap="round"/>
+<circle cx="540" cy="190" r="3" fill="#1D9E75"/>
+<!-- Button wire to GND -->
+<path d="M540 210 L505 210 L505 229 L490 229 L490 260 L280 260 L256 260" fill="none" stroke="#888780" stroke-width="2" stroke-linecap="round"/>
+<circle cx="540" cy="210" r="3" fill="#888780"/>
+
+<!-- ===== LED ===== -->
+<rect class="coral-box" x="548" y="280" width="104" height="70" rx="8"/>
+<text class="coral-title" x="600" y="302" text-anchor="middle">LED</text>
+<!-- LED polarity indicator -->
+<polygon points="580,322 600,314 600,330" fill="#D85A30" opacity="0.7"/>
+<line x1="600" y1="314" x2="600" y2="330" stroke="#D85A30" stroke-width="1.5"/>
+<text class="ts" x="573" y="338" text-anchor="middle">+</text>
+<text class="ts" x="610" y="338" text-anchor="middle">−</text>
+
+<!-- Resistor -->
+<rect class="resistor" x="490" y="264" width="40" height="12" rx="2"/>
+<text class="ts" x="510" y="260">220Ω</text>
+
+<!-- Wire: Pin 3 → resistor → LED anode -->
+<path d="M460 269 L490 269" fill="none" stroke="#D85A30" stroke-width="2" stroke-linecap="round"/>
+<path d="M530 269 L548 269 L548 310" fill="none" stroke="#D85A30" stroke-width="2" stroke-linecap="round"/>
+<circle cx="548" cy="310" r="3" fill="#D85A30"/>
+
+<!-- Wire: LED cathode → GND -->
+<path d="M652 310 L665 310 L665 395 L180 395 L180 229 L220 229" fill="none" stroke="#888780" stroke-width="2" stroke-linecap="round"/>
+<circle cx="652" cy="310" r="3" fill="#888780"/>
+
+<!-- ===== POTENTIOMETER ===== -->
+<rect class="amber-box" x="540" y="410" width="120" height="80" rx="10"/>
+<text class="amber-title" x="600" y="442" text-anchor="middle">Potentiometer</text>
+<text class="amber-sub" x="600" y="460" text-anchor="middle">10kΩ (B10K)</text>
+<!-- Knob indicator -->
+<circle cx="600" cy="476" r="8" fill="none" stroke="#854F0B" stroke-width="1" opacity="0.5"/>
+<line x1="600" y1="476" x2="606" y2="470" stroke="#854F0B" stroke-width="1" opacity="0.5"/>
+<!-- Pot pin labels -->
+<text class="ts" x="537" y="478" text-anchor="end">GND</text>
+<text class="ts" x="600" y="498" text-anchor="middle">Wiper</text>
+<text class="ts" x="663" y="478" text-anchor="start">VCC</text>
+
+<!-- Wire: Pot GND → GND -->
+<path d="M540 476 L510 476 L510 420 L170 420 L170 229 L188 229 L188 260 L220 260" fill="none" stroke="#888780" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 3"/>
+<circle cx="540" cy="476" r="3" fill="#888780"/>
+
+<!-- Wire: Pot wiper → A0 -->
+<path d="M600 490 L600 510 L480 510 L480 349 L460 349" fill="none" stroke="#BA7517" stroke-width="2" stroke-linecap="round"/>
+<circle cx="600" cy="490" r="3" fill="#BA7517"/>
+
+<!-- Wire: Pot VCC → VCC -->
+<path d="M660 476 L670 476 L670 510 L160 510 L160 299 L220 299" fill="none" stroke="#E24B4A" stroke-width="2" stroke-linecap="round"/>
+<circle cx="660" cy="476" r="3" fill="#E24B4A"/>
+
+<!-- ===== LEGEND ===== -->
+<text class="th" x="40" y="50" text-anchor="start">Forbindelsesdiagram</text>
+
+<line x1="40" y1="72" x2="65" y2="72" stroke="#1D9E75" stroke-width="2" stroke-linecap="round"/>
+<text class="ts" x="72" y="76">Signal (knap → Pin 2)</text>
+
+<line x1="40" y1="92" x2="65" y2="92" stroke="#D85A30" stroke-width="2" stroke-linecap="round"/>
+<text class="ts" x="72" y="96">Signal (Pin 3 → LED)</text>
+
+<line x1="40" y1="112" x2="65" y2="112" stroke="#BA7517" stroke-width="2" stroke-linecap="round"/>
+<text class="ts" x="72" y="116">Analog (pot → A0)</text>
+
+<line x1="40" y1="132" x2="65" y2="132" stroke="#888780" stroke-width="2" stroke-linecap="round"/>
+<text class="ts" x="72" y="136">GND (jord / minus)</text>
+
+<line x1="40" y1="152" x2="65" y2="152" stroke="#E24B4A" stroke-width="2" stroke-linecap="round"/>
+<text class="ts" x="72" y="156">VCC (strøm / plus)</text>
+
+</svg>
