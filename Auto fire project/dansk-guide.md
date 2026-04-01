@@ -37,6 +37,8 @@ En LED lyser, når auto-fire er tændt, så du altid kan se hvad der sker.
 
 ## Sådan Forbinder Du Det Hele (Wiring)
 
+![Forbindelsesdiagram](wiring-diagram.svg)
+
 Her er en oversigt over hvad der skal forbindes til hvad. Tag dig god tid — det er vigtigt at det sidder rigtigt.
 
 ### Arcade-Knappen
