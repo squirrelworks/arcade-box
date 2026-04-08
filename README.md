@@ -11,3 +11,6 @@ One leg of the arcade button → a digital pin (use pin 2)
 Other leg → GND
 
 That's it. use the ATmega32U4's internal pull-up resistor, so no external resistor is needed. When the button is open, the pin reads HIGH. When pressed, it connects to GND and reads LOW.
+
+## latest files
+   latestfiles.zip indeholder filer fra dagen
